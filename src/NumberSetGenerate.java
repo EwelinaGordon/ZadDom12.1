@@ -20,10 +20,13 @@ public class NumberSetGenerate {
     static TreeSet<Integer> numbersSet(){
         TreeSet<Integer> treeSet = new TreeSet<>();
         Random random = new Random();
-        int index = 0;
-        while (index <=50) {
+
+        boolean isFull = false;
+        while (!isFull) {
             treeSet.add(random.nextInt(1000));
-            index++;
+           if (treeSet.size() == 50){
+               isFull = true;
+           }
         }
         return treeSet;
     }
